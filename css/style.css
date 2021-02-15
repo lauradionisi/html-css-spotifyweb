@@ -42,20 +42,136 @@ main {
   background-color: black;
 }
 
+/* Top nav logo e menù */
 .flex-items-menu {
-  height: 30%;
+  height: 25%;
   width: 80%;
-  background-color: yellow;
 }
+
 .flex-items-playlist {
-  height: 60%;
+  padding-top: 25px;
+  height: 65%;
   width: 80%;
-  background-color: orange;
 }
+
 .flex-items-account {
   height: 10%;
   width: 80%;
-  background-color: yellow;
+}
+
+.logo {
+  max-width: 80%;
+  padding: 10px;
+}
+
+.home,
+.account {
+  display: flex;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  padding-left: 5px;
+}
+.home img,
+.account img  {
+  max-height: 30px;
+  align-self: flex-start;
+}
+.home a,
+.account a {
+  text-decoration: none;
+  color: grey;
+  align-self: center;
+  padding-left: 5px;
+  font-size: 18px;
+}
+.home a:hover {
+  font-weight: bold;
+  color: white;
+}
+.home:hover {
+  border-left: 2px solid;
+  border-left-color: rgb(89, 255, 62);
+}
+
+/* Sezione playlist */
+.flex-items-playlist h3 {
+  color: white;
+}
+.flex-items-playlist h3 a {
+  margin-left: 10px;
+}
+
+.playlist_plus {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  margin-top: 20px;
+}
+
+.create_playlist {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background-color: grey;
+}
+
+i.fas.fa-plus {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-size: 20px;
+}
+
+.playlist_text,
+.install_app {
+  display: flex;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+.playlist_text a,
+.install_app a {
+  text-decoration: none;
+  color: grey;
+  align-self: center;
+  padding-left: 5px;
+  font-size: 18px;
+}
+.playlist_text a:hover,
+.install_app a:hover {
+  color: white;
+}
+.lista ul li {
+  margin-left: 10px;
+  line-height: 200%;
+  list-style: none;
+}
+.lista li a {
+  text-decoration: none;
+  color: grey;
+}
+.lista li a:hover {
+  color: white;
+}
+
+.install_app {
+  border-bottom: 1px solid grey;
+  padding-bottom: 5px;
+}
+.install_app i {
+  color: grey;
+}
+
+/* Sezione installa-account */
+
+.account img  {
+  background-color: grey;
+  border-radius: 50%;
+  padding: 5px;
+}
+.account a {
+  color: white;
 }
 
 
@@ -122,7 +238,10 @@ main {
  flex-wrap: wrap;
 }
 
-.album_recent {
+.album_recent,
+.album_suggested,
+.album_popular {
+  position: relative;
   margin: 20px 10px;
 }
 
@@ -132,7 +251,6 @@ main {
  align-self: flex-start;
  justify-content: flex-start;
  flex-wrap: wrap;
-
 }
 
 .album_suggested {
@@ -181,6 +299,38 @@ main {
    color: grey;
    line-height: 180%;
  }
+
+
+ /* Hover */
+ .ms_layover,
+ .ms_layover_rounded {
+   position: absolute;
+   left: 20px;
+   width: 150px;
+   height: 150px;
+   opacity: 0;
+ }
+ .ms_layover:hover,
+ .ms_layover_rounded:hover {
+   opacity: 1;
+   background-color: rgba(0, 0, 0, 0.5);
+ }
+
+.ms_layover_rounded {
+  border-radius: 50%;
+}
+
+ .play {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   font-size: 60px;
+   color: white;
+ }
+
+
+
 /* FOOTER */
 footer {
   height: 90px;
@@ -192,6 +342,7 @@ footer {
   height: 90px;
   width: 100%;
   background-color: black;
+
 }
 
 .flex-items {
