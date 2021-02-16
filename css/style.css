@@ -44,17 +44,20 @@ main {
 
 /* Top nav logo e menù */
 .flex-items-menu {
+  overflow: hidden;
   height: 25%;
   width: 80%;
 }
 
 .flex-items-playlist {
+  overflow: auto;
   padding-top: 25px;
   height: 65%;
   width: 80%;
 }
 
 .flex-items-account {
+  overflow: hidden;
   height: 10%;
   width: 80%;
 }
@@ -184,6 +187,7 @@ i.fas.fa-plus {
   background-color: #141922;
 }
 
+
 /* UPGRADE */
 .upgrade {
   display: flex;
@@ -234,15 +238,17 @@ i.fas.fa-plus {
 .recently_played {
  display: flex;
  align-self: flex-start;
- justify-content: flex-start;
+ justify-content: space-between;
  flex-wrap: wrap;
+
 }
 
 .album_recent,
 .album_suggested,
 .album_popular {
   position: relative;
-  margin: 20px 10px;
+  margin-top: 20px;
+  margin-right: 20px;
 }
 
 .suggested,
@@ -338,26 +344,100 @@ footer {
 
 .flex-container-footer {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   height: 90px;
   width: 100%;
   background-color: black;
-
 }
 
 .flex-items {
   height: 50px;
   width: 250px;
-  background-color: yellow;
   align-self: center;
 }
 
+.flex-items.left,
+.flex-items.middle,
+.flex-items.right {
+  display: flex;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-left: 5px;
+}
+.left img {
+ height: 100%;
+}
+
+.flex-items.middle {
+  flex-direction: column;
+  flex-grow: 2;
+}
+
+.audio_top,
+.audio_bottom {
+  align-self: center;
+  height: 25px;
+}
+.audio_top i,
+.right i {
+  align-items: center;
+  padding-right: 25px;
+  color: white;
+}
+
+.audio_bottom {
+  margin-top: 8px;
+}
+.audio_bottom span {
+  color: white;
+}
+
+i#play {
+  font-size: 25px;
+}
+
+.time::after,
+.right::after {
+content: "";
+display: inline-block;
+width: 200px;
+height: 5px;
+line-height: 5px;
+border-radius: 20px;
+vertical-align: middle;
+background-color: lightgrey;
+margin: 8px;
+align-self: center;
+}
+
+.right i {
+  align-self: center;
+}
+.artista {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.artista a {
+  text-decoration: none;
+  color: white;
+  align-self: left;
+  padding-left: 5px;
+}
+
+@media screen and (min-width: 1010px) and (max-width: 1200px) {
+
+  .recently_played {
+    justify-content: flex-start
+  }
+  .album_recent {
+    justify-content: space-around;
+  }
 }
 
 @media screen and (max-width: 1118px) {
 
   .album_recent {
-    flex-grow: 0;
     margin: 20px 10px;
   }
 
@@ -375,5 +455,10 @@ footer {
 
 .discover {
   line-height: 40px;
+}
+
+.album_container {
+  justify-content: space-around;
+  align-items: center;
 }
 }
